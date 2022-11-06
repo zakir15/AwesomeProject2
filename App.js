@@ -1,38 +1,30 @@
 import * as React from 'react';
-import { View, Text} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import About from './About';
-import Home from './Home';
-import Detail from './Detail';
-import Histori from './Histori';
-import Profil from './Profil';
-import Tampilan from './Tampilan';
-
-
-
-function Home_Screen() {
-  return(
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen </Text> 
-    </View>
-  );
-}
+import { NavigatonContainer } from '@react-navigation/native';
+import Home from './navigasi/Home';
+import Detail from './navigasi/Detail';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
+    <NavigatonContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="Detail" component={Detail} />
-        <Stack.Screen name="Histori" component={Histori} />
-        <Stack.Screen name="Profil" component={Profil} />
-        <Stack.Screen name="Tampilan" component={Tampilan} />
+        <Stack.Screen name='Home' component={Home}
+        options={{
+          title: 'Data Karyawan',
+          headerStyle: { backgroundColor: '#006aff' },
+          headerTintColor: '#fff'
+        }}/>
+        <Stack.Screen name='Detail' component={Detail}
+        options={{
+          title: 'Detail Karyawan',
+          headerStyle: { backgroundColor:'#006aff' },
+          headerTintColor: '#fff'
+        }}/>
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigatonContainer>
   );
 }
 
