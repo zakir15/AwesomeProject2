@@ -8,14 +8,14 @@ const Home = ({navigation}) => {
 
     const listKaryawan = ({item}) => {
         return(
-            <Card style={style.cardUtama} onPress={()=>navigation.navigate('Detail',
+            <Card style={styles.cardUtama} onPress={()=>navigation.navigate('Detail',
             {Karyawan:item})}>
-            <View style={style.cardView}>
+            <View style={styles.cardView}>
                 <Image style={{width:50,  height:50, borderRadius:50/2}}
-                source={{url:item.foto}}/>
+                source={{uri:item.foto}}/>
                 <View style={{marginLeft:12}}>
-                    <Text style={style.teks}></Text>
-                    <Text style={style.teks}></Text>
+                    <Text style={styles.teks}>{item.nama}</Text>
+                    <Text style={styles.teks}>{item.jabatan}</Text>
                 </View>
             </View>
             </Card>

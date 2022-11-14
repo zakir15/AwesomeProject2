@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Button, Image, Linking } from 'react-native';
 import { Title, Card  } from 'react-native-paper';
-import { MaterialIcons, Entypo } from 'react-native-vektor-icons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Entypo from 'react-native-vector-icons/Entypo';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Detail = ({navigation, route}) => {
     const {karyawan} = route.params
     return (
         <View style={{flex:1}}>
-            <linearGradient colors={["#0033ff","#6bc1ff"]} style={{height:"20%"}} />
+            <LinearGradient colors={["#0033ff","#6bc1ff"]} style={{height:"20%"}} />
             <View style={{alignItems:"center"}}>
                 <Image style={{width:120, height:120, borderRadius:120/2, marginTop:-50}}
                 source={{uri:karyawan.foto}} />
